@@ -1,2 +1,3 @@
 deploy:
   - okteto build -f ./Dockerfile -t okteto.dev/daml-sdk-cut
+  - kubectl apply -f k8s.yml
