@@ -1,2 +1,2 @@
 deploy:
-  - okteto build -t okteto.dev/daml-sdk-cut:${OKTETO_GIT_COMMIT} daml-sdk-cut
+  - okteto build -f ./Dockerfile -t okteto.dev/daml-sdk-cut:${OKTETO_GIT_COMMIT} daml-sdk-cut
