@@ -1,33 +1,33 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: daml-sandbox
+  name: daml-sdk-cut
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: daml-sandbox
+      app: daml-sdk-cut
   template:
     metadata:
       labels:
-        app: daml-sandbox
+        app: daml-sdk-cut
     spec:
       containers:
-      - image: shleger/daml-sandbox:latest
-        name: daml-sandbox
+      - image: okteto/daml-sdk-cut:latest
+        name: daml-sdk-cut
 
 ---
 
 apiVersion: v1
 kind: Service
 metadata:
-  name: daml-sandbox
+  name: daml-sdk-cut
   annotations:
     dev.okteto.com/auto-ingress: "true"
 spec:
   type: ClusterIP  
   ports:
-  - name: "daml-sandbox"
+  - name: "daml-sdk-cut"
     port: 6865
   selector:
-    app: hello-world
+    app: daml-sdk-cut
