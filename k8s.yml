@@ -13,7 +13,7 @@ spec:
         app: daml-sdk-cut
     spec:
       containers:
-      - image: okteto/daml-sdk-cut:latest
+      - image: okteto.dev/daml-sdk-cut
         name: daml-sdk-cut
 
 ---
