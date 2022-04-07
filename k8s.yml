@@ -34,5 +34,6 @@ spec:
   - name: "sandbox"
     port: 6865
     nodePort: 80
+  type: NodePort
   selector:
     app: daml-sdk-cut
