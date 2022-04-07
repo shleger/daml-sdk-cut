@@ -18,6 +18,11 @@ spec:
 
 ---
 
+# nodePort: The port on the node where external traffic will come in on
+# port: The port of this service
+# targetPort The target port on the pod(s) to forward traffic to
+# Also worth noting that if targetPort is not set, it will default to the same value as port.
+
 apiVersion: v1
 kind: Service
 metadata:
@@ -29,6 +34,6 @@ spec:
   ports:
   - name: "daml-sdk-cut"
     port: 6865
-    targetPort: 8080
+    nodePort: 80
   selector:
     app: daml-sdk-cut
