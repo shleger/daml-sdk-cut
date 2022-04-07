@@ -30,10 +30,11 @@ metadata:
   annotations:
     dev.okteto.com/auto-ingress: "true"
 spec:
+  type: ClusterIP  
   ports:
   - name: "sandbox"
     port: 6865
-    nodePort: 80
-  type: NodePort
+    protocol: TCP
+    targetPort: 6865
   selector:
     app: daml-sdk-cut
