@@ -34,7 +34,5 @@ spec:
   ports:
   - name: "sandbox"
     port: 6865
-    protocol: TCP
-    targetPort: 6865
   selector:
     app: daml-sdk-cut
